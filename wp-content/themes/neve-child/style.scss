@@ -1,0 +1,38 @@
+/*
+Theme Name: Neve Child
+description: >-
+  Child Theme of Neve
+Author: Mike Eng
+Author URI: http://mike-eng.com
+Template: neve
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, responsive-layout
+Text Domain: neve-child
+*/
+#content .row{
+  max-width:42em;
+}
+
+h1, h2, h3, h4, h5, h6{
+  clear:both;
+}
+
+figure.alignleft:first-child, figure.alignright:first-child{
+  margin-top:0;
+}
+
+p{
+  clear:both;
+}
+
+@media (min-width: 769px) {
+  p{
+      clear:none;
+  }
+}
+
+.header-menu-sidebar .nav-menu-primary ul li{
+  text-align:left;
+}
