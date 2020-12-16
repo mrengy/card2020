@@ -24,6 +24,7 @@ add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
 
 function neve_child_enqueue_scripts() {
   wp_enqueue_script( 'open-children', get_stylesheet_directory_uri() . '/js/open-children.js', array ( 'jquery' ), 1.0, true);
+  wp_enqueue_script( 'typo-js', get_stylesheet_directory_uri() . '/js/typo.js', array ( 'jquery' ), 1.0, true);
 }
 //add google analytics
 add_action('wp_head', 'wpb_add_googleanalytics');
