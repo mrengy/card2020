@@ -5,7 +5,7 @@ jQuery(document).ready(function($){
   $("#comment").on("input", function(){
         comment_raw = ($(this).val());
         //console.log(comment_raw);
-        comment_stripped = JSON.stringify(comment_raw).replace(/[^a-z\d ]/i, '');
+        comment_stripped = JSON.stringify(comment_raw).replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
         console.log('comment stripped = '+comment_stripped);
         console.log('comment raw = '+comment_raw);
   });
