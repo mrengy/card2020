@@ -4,10 +4,9 @@ jQuery(document).ready(function($){
   var comment_stripped = '';
   $("#comment").on("input", function(){
         comment_raw = ($(this).val());
-        //console.log(comment_raw);
-        comment_stripped = JSON.stringify(comment_raw).replace(/[^\w\s]|_/g, "").replace(/\s+/g, " ");
-        console.log('comment stripped = '+comment_stripped);
+        comment_stripped = comment_raw.replace(/[^\w\s]|_/g, "").replace(/\n/g, " ").replace(/\s+/g, " ");
         console.log('comment raw = '+comment_raw);
+        console.log('comment stripped = '+comment_stripped);
   });
   /*
   var is_spelled_correctly = dictionary.check("mispelled");
