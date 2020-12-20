@@ -18,8 +18,4 @@ jQuery(document).ready(function($){
           console.log(index+' = '+is_spelled_correctly);
         })
   });
-  /*
-  var is_spelled_correctly = dictionary.check("mispelled");
-  console.log(is_spelled_correctly);
-  */
 });
