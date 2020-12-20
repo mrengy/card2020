@@ -25,8 +25,9 @@ add_filter( "comment_form_field_{$neve_child_comment_field_name}", 'neve_child_f
 add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
 
 function neve_child_enqueue_scripts() {
-  wp_enqueue_script( 'open-children', get_stylesheet_directory_uri() . '/js/open-children.js', array ( 'jquery' ), 1.0, true);
-  wp_enqueue_script( 'typo-js', get_stylesheet_directory_uri() . '/js/typo.js', array ( 'jquery' ), 1.0, true);
+  wp_enqueue_script( 'open-children', get_stylesheet_directory_uri() . '/js/open-children.js', array( 'jquery' ), 1.0, true);
+  wp_enqueue_script( 'typo-js', get_stylesheet_directory_uri() . '/js/vendor/typo/typo.js', array( 'jquery' ), 1.0, true);
+  wp_enqueue_script( 'spellcheck', get_stylesheet_directory_uri() . '/js/spellcheck.js', array( 'jquery', 'typo-js' ), 1.0, true);
 }
 //add google analytics
 add_action('wp_head', 'wpb_add_googleanalytics');
