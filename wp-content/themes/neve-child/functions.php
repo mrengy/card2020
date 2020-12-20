@@ -14,10 +14,12 @@ function neve_child_enqueue_styles() {
     );
 }
 
-//customizing comment form
-$neve_child_new_comment_field = '<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>';
+//customizing comment form to eliminate browser autocomplete
 $neve_child_comment_field_name = "comment";
-add_filter( "comment_form_field_{$neve_child_comment_field_name}", $neve_child_new_comment_field );
+function neve_child_filter_comment_form(){
+  return '<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>';
+}
+add_filter( "comment_form_field_{$neve_child_comment_field_name}", 'neve_child_filter_comment_form' );
 
 //add wp_enqueue_scripts
 add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
