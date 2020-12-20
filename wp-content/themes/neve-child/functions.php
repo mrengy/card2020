@@ -14,10 +14,10 @@ function neve_child_enqueue_styles() {
     );
 }
 
-//obfuscating emails using email-address-encoder plugin https://encoder.till.im/guide#filtering-content
-if ( function_exists( 'eae_encode_emails' ) )  {
-    add_filter( 'wp_nav_menu_items', 'eae_encode_emails' );
-}
+//customizing comment form
+$neve_child_new_comment_field = '<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>';
+$neve_child_comment_field_name = "comment";
+add_filter( "comment_form_field_{$neve_child_comment_field_name}", $neve_child_new_comment_field );
 
 //add wp_enqueue_scripts
 add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
