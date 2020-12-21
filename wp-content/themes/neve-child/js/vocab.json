@@ -1,0 +1,49 @@
+{
+   "word": [
+
+      {
+        "name": "please",
+        "description": ""
+      },
+
+      {
+        "name": "yes",
+        "description": ""
+      },
+
+      {
+        "name": "no",
+        "description": ""
+      },
+
+      {
+        "name": "okay",
+        "description": ""
+      },
+
+      {
+        "name": "mama",
+        "description": ""
+      },
+
+      {
+        "name": "papa",
+        "description": ""
+      },
+
+      {
+        "name": "grammy",
+        "description": ""
+      },
+
+      {
+        "name": "nene",
+        "description": "Grandma Nancy"
+      },
+
+      {
+        "name": "dziadziu",
+        "description": "polish for grandpa"
+      }
+   ]
+}

@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
   var is_spelled_correctly;
   $("#comment").on("input", function(){
         comment_raw = ($(this).val());
-        comment_stripped = comment_raw.replace(/[^\w\s]|_/g, "").replace(/\n/g, " ").replace(/\s+/g, " ");
+        comment_stripped = comment_raw.replace(/[^\w\s]|_/g, " ").replace(/\n/g, " ").replace(/\s+/g, " ");
         words = comment_stripped.split(' ');
         /*
         console.log('comment raw = '+comment_raw);
