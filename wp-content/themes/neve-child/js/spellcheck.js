@@ -16,9 +16,11 @@ jQuery(document).ready(function($){
       console.log(words);
       */
       $.each(words, function(index, item){
-        var is_in_vocab = false;
-        for (var i = 0; i < vocab.word.length; ++i){
-          var thisWord = vocab.word[i].name;
+
+        //console.log(vocab.responseJSON);
+        for (var i = 0; i < vocab.responseJSON.word.length; ++i){
+          var is_in_vocab = false;
+          var thisWord = vocab.responseJSON.word[i].name;
           //console.log(thisWord);
           if(thisWord=this){
             is_in_vocab = true;
