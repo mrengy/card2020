@@ -1,12 +1,10 @@
 jQuery(document).ready(function($){
-  var dictionary = new Typo("en_US", false, false, { dictionaryPath: neve_child_stylesheet_directory['stylesheet_directory_uri']+"/js/vendor/typo/dictionaries" });
-
   var vocab = $.getJSON(neve_child_stylesheet_directory['stylesheet_directory_uri']+'/js/vocab.json', function(obj) {
   });
 
   $("#comment").on("input", function(){
       var comment_raw = ($(this).val());
-      var comment_stripped = comment_raw.replace(/[^\w\s]|_/g, " ").replace(/\n/g, " ").replace(/\s+/g, " ");
+      var comment_stripped = comment_raw.replace(/[^\w\s]|_/g, "").replace(/\n/g, " ").replace(/\s+/g, " ");
       var words = [];
       words = comment_stripped.split(' ');
       var incorrect_words = [];
