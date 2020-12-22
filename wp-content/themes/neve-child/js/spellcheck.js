@@ -36,8 +36,13 @@ jQuery(document).ready(function($){
       console.log(incorrect_words.length);
       e.preventDefault();
       var string_incorrect_words = (incorrect_words.join(', '));
-      
-      console.log("Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.");
+
+      var error_message ="Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.";
+      $('#comment').after(
+        ' <label id = "comment-error" class="error" for="comment"> '
+        + error_message
+        +'</label>'
+      );
     }
   })
 });
