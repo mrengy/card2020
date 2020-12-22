@@ -2,6 +2,12 @@ jQuery(document).ready(function($){
   var vocab = $.getJSON(neve_child_stylesheet_directory['stylesheet_directory_uri']+'/js/vocab.json', function(obj) {
   });
 
+  //use jquery validate
+  $('#commentform').validate({
+    debug: true
+  });
+
+  //check words input in comment field against vocab
   $("#comment").on("input", function(){
       var comment_raw = ($(this).val());
       var comment_stripped = comment_raw.replace(/[^\w\s]|_/g, "").replace(/\n/g, " ").replace(/\s+/g, " ");
@@ -26,4 +32,5 @@ jQuery(document).ready(function($){
         console.log(incorrect_words);
       })
   });
+
 });

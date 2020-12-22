@@ -26,7 +26,8 @@ add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
 
 function neve_child_enqueue_scripts() {
   wp_enqueue_script( 'open-children', get_stylesheet_directory_uri() . '/js/open-children.js', array( 'jquery' ), 1.0, true);
-  wp_enqueue_script( 'spellcheck', get_stylesheet_directory_uri() . '/js/spellcheck.js', array( 'jquery'), 1.0, true);
+  wp_enqueue_script( 'validate', get_stylesheet_directory_uri() . '/js/vendor/jquery.validate.min.js', array( 'jquery'), 1.0, true);
+  wp_enqueue_script( 'spellcheck', get_stylesheet_directory_uri() . '/js/spellcheck.js', array( 'jquery', 'validate'), 1.0, true);
 
   $neve_child_stylesheet_directory = array( 'stylesheet_directory_uri' => get_stylesheet_directory_uri() );
   wp_localize_script( 'spellcheck', 'neve_child_stylesheet_directory', $neve_child_stylesheet_directory );
