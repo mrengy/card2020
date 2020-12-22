@@ -2,18 +2,16 @@ jQuery(document).ready(function($){
   var vocab = $.getJSON(neve_child_stylesheet_directory['stylesheet_directory_uri']+'/js/vocab.json', function(obj) {
   });
 
-  //use jquery validate
-  $('#commentform').validate({
-    debug: true
-  });
-
+  var incorrect_words = [];
   //check words input in comment field against vocab
   $("#comment").on("input", function(){
       var comment_raw = ($(this).val());
       var comment_stripped = comment_raw.replace(/[^\w\s]|_/g, "").replace(/\n/g, " ").replace(/\s+/g, " ");
       var words = [];
       words = comment_stripped.split(' ');
-      var incorrect_words = [];
+      //reset incorrect_words
+      incorrect_words = [];
+
       $.each(words, function(index, item){
         var is_in_vocab = false;
         for (var i = 0; i < vocab.responseJSON.word.length; ++i){
@@ -29,8 +27,17 @@ jQuery(document).ready(function($){
         }
         // show whether each number word in the comment is in the vocab
         //console.log(index+' = '+is_in_vocab);
-        console.log(incorrect_words);
+        //console.log(incorrect_words);
       })
   });
 
+  $('#commentform').submit(function(e){
+    if (incorrect_words.length > 0){
+      console.log(incorrect_words.length);
+      e.preventDefault();
+      var string_incorrect_words = (incorrect_words.join(', '));
+      
+      console.log("Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.");
+    }
+  })
 });
