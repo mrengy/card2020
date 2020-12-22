@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
   var dictionary = new Typo("en_US", false, false, { dictionaryPath: neve_child_stylesheet_directory['stylesheet_directory_uri']+"/js/vendor/typo/dictionaries" });
 
   var vocab = $.getJSON(neve_child_stylesheet_directory['stylesheet_directory_uri']+'/js/vocab.json', function(obj) {
-      console.log(obj);
+      //console.log(obj);
   });
 
   $("#comment").on("input", function(){
@@ -19,10 +19,10 @@ jQuery(document).ready(function($){
         var is_in_vocab = false;
         //console.log(vocab.responseJSON);
         for (var i = 0; i < vocab.responseJSON.word.length; ++i){
-          var is_in_vocab = false;
+
           var thisWord = vocab.responseJSON.word[i].name;
           //console.log(thisWord);
-          if(thisWord==this){
+          if(thisWord.toUpperCase()===this.toUpperCase()){
             is_in_vocab = true;
             break;
           }
