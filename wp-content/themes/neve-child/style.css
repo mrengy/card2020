@@ -26,4 +26,10 @@ p {
 .header-menu-sidebar .nav-menu-primary ul li {
   text-align: left; }
 
+.error {
+  color: red; }
+
+.has-error {
+  border: red 1px solid; }
+
 /*# sourceMappingURL=style.css.map */
