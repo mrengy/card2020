@@ -32,6 +32,10 @@ jQuery(document).ready(function($){
     })
   };
 
+  function throwerrors(){
+
+  };
+
   $("#comment").on("input", checkwords);
 
   $('#commentform').submit(function(e){
