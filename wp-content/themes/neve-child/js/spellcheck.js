@@ -32,17 +32,13 @@ jQuery(document).ready(function($){
     })
   };
 
-  function throwerrors(){
-
-  };
-
-  $("#comment").on("input", checkwords);
-
-  $('#commentform').submit(function(e){
+  function throwerrors(event){
     if (incorrect_words.length > 0){
       $('#comment-error').remove();
 
-      e.preventDefault();
+      if(event.type == 'submit'){
+          event.preventDefault();
+      }
       var string_incorrect_words = (incorrect_words.join(', '));
 
       var error_message ="Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.";
@@ -53,5 +49,9 @@ jQuery(document).ready(function($){
         +'</label>'
       );
     }
-  })
+  };
+
+  $("#comment").on("input", checkwords);
+
+  $('#commentform').submit(throwerrors);
 });
