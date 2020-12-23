@@ -33,11 +33,13 @@ jQuery(document).ready(function($){
 
   $('#commentform').submit(function(e){
     if (incorrect_words.length > 0){
-      console.log(incorrect_words.length);
+      $('#comment-error').remove();
+
       e.preventDefault();
       var string_incorrect_words = (incorrect_words.join(', '));
 
       var error_message ="Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.";
+      $('#comment').addClass('has-error');
       $('#comment').after(
         ' <label id = "comment-error" class="error" for="comment"> '
         + error_message
