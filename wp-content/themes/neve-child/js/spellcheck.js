@@ -33,8 +33,11 @@ jQuery(document).ready(function($){
   };
 
   function throwerrors(event){
+    //reset errors
+    $('#comment-error').remove();
+    $('#comment').removeClass('has-error');
+
     if (incorrect_words.length > 0){
-      $('#comment-error').remove();
 
       if(event.type == 'submit'){
           event.preventDefault();
@@ -52,6 +55,7 @@ jQuery(document).ready(function($){
   };
 
   $("#comment").on("input", checkwords);
+  $("#comment").on("blur", throwerrors);
 
   $('#commentform').submit(throwerrors);
 });
