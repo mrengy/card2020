@@ -31,6 +31,17 @@ function neve_child_enqueue_scripts() {
   $neve_child_stylesheet_directory = array( 'stylesheet_directory_uri' => get_stylesheet_directory_uri() );
   wp_localize_script( 'spellcheck', 'neve_child_stylesheet_directory', $neve_child_stylesheet_directory );
 }
+
+//php debugging function
+function console_log($output, $with_script_tags = true) {
+    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+');';
+    if ($with_script_tags) {
+        $js_code = '<script>' . $js_code . '</script>';
+    }
+    echo $js_code;
+}
+
 //add google analytics
 add_action('wp_head', 'wpb_add_googleanalytics');
 function wpb_add_googleanalytics() { ?>
