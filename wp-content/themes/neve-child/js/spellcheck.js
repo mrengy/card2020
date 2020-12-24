@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
           break;
         }
         //when we are checking the last word in the vocab, if it doesn't match the word typed
-        else if(i == (vocab.responseJSON.word.length - 1) && thisWord.toUpperCase()!=this.toUpperCase()) {
+        else if(i == (vocab.responseJSON.word.length - 1) && thisWord.toUpperCase()!=this.toUpperCase() && this.length > 0){
           incorrect_words.push(this);
         }
       }
@@ -38,13 +38,15 @@ jQuery(document).ready(function($){
     $('#comment').removeClass('has-error');
 
     if (incorrect_words.length > 0){
-
-      if(event.type == 'submit'){
-          event.preventDefault();
+      if(event != null){
+        if(event.type == 'submit'){
+            event.preventDefault();
+        }
       }
       var string_incorrect_words = (incorrect_words.join(', '));
 
       var error_message ="Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.";
+
       $('#comment').addClass('has-error');
       $('#comment').after(
         ' <label id = "comment-error" class="error" for="comment"> '
@@ -54,8 +56,14 @@ jQuery(document).ready(function($){
     }
   };
 
-  $("#comment").on("input", checkwords);
-  $("#comment").on("blur", throwerrors);
+  $('#comment').on('input', checkwords);
+  $('#comment').on('blur', throwerrors);
+  $('#comment').keyup(function(e){
+    //if space is pressed
+    if(e.which === 32){
+      throwerrors();
+    }
+  });
 
   $('#commentform').submit(throwerrors);
 });
