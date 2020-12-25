@@ -38,12 +38,29 @@ get_header();
 
 								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
 
-								echo('<pre>');
 								$comments_args = array(
 									'post_id' => $this_child->ID
 								);
+								/*
+								echo('<pre>');
 								print_r(get_comments($comments_args) );
 								echo('</pre>');
+								*/
+								$this_comments_list = (get_comments($comments_args));
+								if (sizeof($this_comments_list)> 0 ){
+									$chosen_comment = $this_comments_list[array_rand($this_comments_list)];
+									//display comment content
+									?>
+									<div class="comment">
+										<div class="comment-content">
+											"<?php echo($chosen_comment->comment_content);?>"
+										</div>
+										<div class="comment-author">
+											by <?php echo($chosen_comment->comment_author);?>
+										</div>
+									</div>
+									<?php
+								}
 
 							/*
 							echo('<pre>');
