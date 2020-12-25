@@ -38,7 +38,12 @@ get_header();
 
 								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
 
-								//echo(wp_get_attachment_image($this_child->ID, 'large'));
+								echo('<pre>');
+								$comments_args = array(
+									'post_id' => $this_child->ID
+								);
+								print_r(get_comments($comments_args) );
+								echo('</pre>');
 
 							/*
 							echo('<pre>');
