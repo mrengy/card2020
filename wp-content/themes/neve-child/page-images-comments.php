@@ -35,7 +35,10 @@ get_header();
 					echo('</pre>');
 					*/
 					foreach($this_page_children as $this_child){
-							echo(wp_get_attachment_image($this_child->ID, 'large'));
+
+								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
+
+								//echo(wp_get_attachment_image($this_child->ID, 'large'));
 
 							/*
 							echo('<pre>');
