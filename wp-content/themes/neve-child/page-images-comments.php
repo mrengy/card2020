@@ -21,6 +21,7 @@ get_header();
 					the_post();
 					get_template_part( 'template-parts/content', 'page' );
 
+					//display attached images
 					$children_args = array(
 						'order'          => 'ASC',
 		        'post_mime_type' => 'image',
@@ -28,10 +29,26 @@ get_header();
 					);
 
 					$this_page_children = get_children($children_args);
+					/*
 					echo('<pre>');
 					print_r($this_page_children);
 					echo('</pre>');
+					*/
+					foreach($this_page_children as $this_child){
+							echo(wp_get_attachment_image($this_child->ID, 'large'));
 
+							/*
+							echo('<pre>');
+							echo('array </br>');
+							print_r($this_child);
+							echo('</pre>');
+
+							echo('<pre>');
+							echo('this_child[ID]');
+							echo($this_child->ID);
+							echo('</pre>');
+							*/
+					}
 				}
 			} else {
 				get_template_part( 'template-parts/content', 'none' );
