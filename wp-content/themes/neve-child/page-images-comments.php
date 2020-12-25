@@ -25,27 +25,26 @@ get_header();
 					$children_args = array(
 						'order'          => 'ASC',
 		        'post_mime_type' => 'image',
-		        'post_parent'    => $post_id
+		        'post_parent'    => $post->ID
 					);
 
+					//echo($post->ID);
+
 					$this_page_children = get_children($children_args);
+
 					/*
 					echo('<pre>');
 					print_r($this_page_children);
 					echo('</pre>');
 					*/
 					foreach($this_page_children as $this_child){
-
+								//display all imamge attachment children
 								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
 
+								//display a random commment from the attachment image
 								$comments_args = array(
 									'post_id' => $this_child->ID
 								);
-								/*
-								echo('<pre>');
-								print_r(get_comments($comments_args) );
-								echo('</pre>');
-								*/
 								$this_comments_list = (get_comments($comments_args));
 								if (sizeof($this_comments_list)> 0 ){
 									$chosen_comment = $this_comments_list[array_rand($this_comments_list)];
