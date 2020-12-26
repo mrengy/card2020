@@ -56,7 +56,7 @@ get_header();
 										captioned by <?php echo($chosen_comment->comment_author);?>
 									</div>
 									<div class="comments-link">
-										<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions</a>
+										<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions and add your own</a>
 									</div>
 								</div>
 							</article>
