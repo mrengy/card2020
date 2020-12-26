@@ -33,9 +33,6 @@ function neve_child_enqueue_scripts() {
 }
 
 //widget to show vocab list
-function write_vocab(){
-  $vocab = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
-}
 
   // Creating the widget
   class show_vocab extends WP_Widget {
@@ -66,6 +63,11 @@ function write_vocab(){
 
       // This is where you run the code and display the output
       echo __( 'Hello, World!', 'show_vocab_widget_domain' );
+
+      $vocab_file = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
+      $vocab_arr = json_decode($vocab_file, true);
+
+      //display other theme things
       echo $args['after_widget'];
     }
 
