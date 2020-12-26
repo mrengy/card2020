@@ -80,15 +80,7 @@ function neve_child_enqueue_scripts() {
 
       // This is where you run the code and display the output
       $vocab_file = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
-      if(is_string($vocab_file)){
-        $vocab_arr = json_decode($vocab_file, true);
-      } else{
-        $vocab_arr = array();
-        array_push($vocab_arr,'word');
-        foreach ($vocab_file['word'] as $k => $v){
-          $vocab_arr['word'][$k] = clone $v;
-        }
-      }
+      $vocab_arr = json_decode($vocab_file, true);
       console_log($vocab_file);
       console_log($vocab_arr);
 
