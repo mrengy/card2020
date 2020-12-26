@@ -87,7 +87,12 @@ function neve_child_enqueue_scripts() {
       foreach($vocab_arr['word'] as $item){
         array_push($words_arr, $item);
       }
-      sort($words_arr);
+
+      function compare($a, $b){
+        return strnatcasecmp($a['name'], $b['name']);
+      }
+      console_log($words_arr);
+      uasort($words_arr, 'compare');
 
       echo('<dl>');
       foreach($words_arr as $item){
@@ -105,8 +110,6 @@ function neve_child_enqueue_scripts() {
         }
       }
       echo('</dl>');
-
-      console_log($vocab_arr);
 
       //display other theme things
       echo $args['after_widget'];
