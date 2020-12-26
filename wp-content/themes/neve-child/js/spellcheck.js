@@ -66,4 +66,7 @@ jQuery(document).ready(function($){
   });
 
   $('#commentform').submit(throwerrors);
+
+  //scroll to anchor
+  $("a[href^=#]").click(function(e) {   e.preventDefault();   var dest = $(this).attr('href');   console.log(dest);   $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow'); });
 });
