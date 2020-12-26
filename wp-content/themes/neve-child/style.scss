@@ -81,3 +81,27 @@ p{
     clear:both;
   }
 }
+
+dt{
+  display:inline-block;
+  float:left;
+  clear:left;
+  margin-bottom: .5em;
+}
+
+dd{
+  font-style:italic;
+  opacity: .7;
+  display: inline-block;
+  float:left;
+  clear:none;
+  margin-left:.5em;
+}
+
+dd:before{
+  content: "\0028";
+}
+
+dd:after{
+  content: "\0029";
+}
