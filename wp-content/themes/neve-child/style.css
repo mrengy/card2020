@@ -81,4 +81,10 @@ dd:before {
 dd:after {
   content: "\0029"; }
 
+/*
+#nv-primary-navigation-main, .menu-mobile-toggle{
+  display: none;
+}
+*/
+
 /*# sourceMappingURL=style.css.map */

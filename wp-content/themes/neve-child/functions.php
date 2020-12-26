@@ -91,7 +91,6 @@ function neve_child_enqueue_scripts() {
       function compare($a, $b){
         return strnatcasecmp($a['name'], $b['name']);
       }
-      console_log($words_arr);
       uasort($words_arr, 'compare');
 
       echo('<dl>');
