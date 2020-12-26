@@ -82,8 +82,15 @@ function neve_child_enqueue_scripts() {
       $vocab_file = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
       $vocab_arr = json_decode($vocab_file, true);
 
-      echo('<dl>');
+      //sorting words alphabetically
+      $words_arr = [];
       foreach($vocab_arr['word'] as $item){
+        array_push($words_arr, $item);
+      }
+      sort($words_arr);
+
+      echo('<dl>');
+      foreach($words_arr as $item){
         echo(
           '<dt>'.
           $item['name'].
