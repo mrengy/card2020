@@ -80,6 +80,7 @@ function neve_child_enqueue_scripts() {
 
       // This is where you run the code and display the output
       $vocab_file = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
+      print_r($vocab_file);
       $vocab_arr = json_decode($vocab_file, true);
 
       //sorting words alphabetically
