@@ -13,6 +13,7 @@ Text Domain: neve-child
 */
 
 $error-color: red;
+$quote-font-family: Garamond,Baskerville,Baskerville Old Face,Hoefler Text,Times New Roman,serif;
 
 h1, h2, h3, h4, h5, h6{
   clear:both;
@@ -36,10 +37,47 @@ p{
   text-align:left;
 }
 
-.error{
+.error, .error a{
   color: $error-color;
 }
 
 .has-error{
   border: $error-color 1px solid;
+}
+
+.on-page {
+  .nv-comment-content{
+    font-size: 1.25em;
+  }
+
+  .nv-comment-content:before{
+    content: open-quote;
+    display: inline;
+    height: 0;
+    line-height: 0;
+    //left: -10px;
+    position: relative;
+    top: .4em;
+    color: #ccc;
+    font-size: 3em;
+    font-family: $quote-font-family;
+  }
+
+  .nv-comment-content:after{
+    content: close-quote;
+    display: inline;
+    height: 0;
+    line-height: 0;
+    //left: 10px;
+    position: relative;
+    top: .4em;
+    color: #ccc;
+    font-size: 3em;
+    font-family: $quote-font-family;
+  }
+
+  .nv-comment-header, .nv-comment-header .comment-author{
+    display:block;
+    clear:both;
+  }
 }

@@ -30,11 +30,6 @@ get_header();
 
 					$this_page_children = get_children($children_args);
 
-					/*
-					echo('<pre>');
-					print_r($this_page_children);
-					echo('</pre>');
-					*/
 					foreach($this_page_children as $this_child){
 								//display all imamge attachment children
 								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
@@ -46,16 +41,23 @@ get_header();
 								$this_comments_list = (get_comments($comments_args));
 								if (sizeof($this_comments_list)> 0 ){
 									$chosen_comment = $this_comments_list[array_rand($this_comments_list)];
+
 									//display comment content
 									?>
-									<div class="comment">
-										<div class="comment-content">
-											"<?php echo($chosen_comment->comment_content);?>"
+
+									<article class="nv-comment-article on-page">
+										<div class="nv-comment-content comment nv-content-wrap">
+											<?php echo($chosen_comment->comment_content);?>
 										</div>
-										<div class="comment-author">
-											by <?php echo($chosen_comment->comment_author);?>
+										<div class="nv-comment-header">
+											<div class="comment-author">
+												by <?php echo($chosen_comment->comment_author);?>
+											</div>
+											<div class="comments-link">
+												<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions</a>
+											</div>
 										</div>
-									</div>
+									</article>
 									<?php
 								}
 
