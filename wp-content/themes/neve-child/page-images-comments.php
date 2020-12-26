@@ -31,47 +31,48 @@ get_header();
 					$this_page_children = get_children($children_args);
 
 					foreach($this_page_children as $this_child){
-								//display all imamge attachment children
-								echo(wp_get_attachment_link($this_child->ID, 'large', true) );
+						//display all imamge attachment children
+						echo(wp_get_attachment_link($this_child->ID, 'large', true) );
 
-								//display a random commment from the attachment image
-								$comments_args = array(
-									'post_id' => $this_child->ID
-								);
-								$this_comments_list = (get_comments($comments_args));
-								if (sizeof($this_comments_list)> 0 ){
-									$chosen_comment = $this_comments_list[array_rand($this_comments_list)];
+						//display a random commment from the attachment image
+						$comments_args = array(
+							'post_id' => $this_child->ID
+						);
+						$this_comments_list = (get_comments($comments_args));
 
-									//display comment content
-									?>
+						//if there are comments
+						if (sizeof($this_comments_list)> 0 ){
+							$chosen_comment = $this_comments_list[array_rand($this_comments_list)];
 
-									<article class="nv-comment-article on-page">
-										<div class="nv-comment-content comment nv-content-wrap">
-											<?php echo($chosen_comment->comment_content);?>
-										</div>
-										<div class="nv-comment-header">
-											<div class="comment-author">
-												captioned by <?php echo($chosen_comment->comment_author);?>
-											</div>
-											<div class="comments-link">
-												<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions</a>
-											</div>
-										</div>
-									</article>
-									<?php
-								}
+							//display comment content
+							?>
 
-							/*
-							echo('<pre>');
-							echo('array </br>');
-							print_r($this_child);
-							echo('</pre>');
-
-							echo('<pre>');
-							echo('this_child[ID]');
-							echo($this_child->ID);
-							echo('</pre>');
-							*/
+							<article class="nv-comment-article on-page">
+								<div class="nv-comment-content comment nv-content-wrap">
+									<?php echo($chosen_comment->comment_content);?>
+								</div>
+								<div class="nv-comment-header">
+									<div class="comment-author">
+										captioned by <?php echo($chosen_comment->comment_author);?>
+									</div>
+									<div class="comments-link">
+										<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions</a>
+									</div>
+								</div>
+							</article>
+							<?php
+						} else{
+							//if there are no comments
+							?>
+							<article class="nv-comment-article on-page">
+								<div class="nv-comment-header">
+									<div class="comments-link">
+										<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">This photo could use a caption</a>
+									</div>
+								</div>
+							</article>
+							<?php
+						}
 					}
 				}
 			} else {
