@@ -45,6 +45,10 @@ p{
   border: $error-color 1px solid;
 }
 
+.entry-content p{
+  max-width: 42em;
+}
+
 .on-page {
   .nv-comment-content{
     font-size: 1.25em;
