@@ -80,6 +80,10 @@ jQuery(document).ready(function($){
       $('html,body').animate({scrollTop: aTag.offset().top},'slow');
     }
 
-    $('a.scrollLink').click(scrollToAnchor('secondary'));
+    $('a.scrollLink').click(
+      $('#comment').blur();
+      scrollToAnchor('secondary');
+      scrollToAnchor('secondary');
+    );
 
 });
