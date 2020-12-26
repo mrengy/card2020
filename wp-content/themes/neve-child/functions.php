@@ -170,7 +170,7 @@ function wpb_add_googleanalytics() { ?>
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'UA-15294685-1');
+    gtag('config', 'G-YJXNP24V7H');
   </script>
 
 <?php } ?>
