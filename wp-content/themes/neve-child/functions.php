@@ -28,6 +28,13 @@ function neve_child_enqueue_styles() {
     return $fields;
   }
   add_filter('comment_form_default_fields','remove_comment_fields');
+
+  //change default verbiage
+  function wpdocs_comment_form_defaults( $defaults ) {
+    $defaults['title_reply'] = __( 'Add a caption' );
+    return $defaults;
+  }
+  add_filter( 'comment_form_defaults', 'wpdocs_comment_form_defaults' );
 //add wp_enqueue_scripts
 add_action( 'wp_enqueue_scripts', 'neve_child_enqueue_scripts');
 
