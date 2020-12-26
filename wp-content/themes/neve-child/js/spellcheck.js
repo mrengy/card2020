@@ -81,8 +81,6 @@ jQuery(document).ready(function($){
     }
 
     $('a.scrollLink').click(
-      $('#comment').blur();
-      scrollToAnchor('secondary');
       scrollToAnchor('secondary');
     );
 
