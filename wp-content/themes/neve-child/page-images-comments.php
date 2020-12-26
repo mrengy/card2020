@@ -51,7 +51,7 @@ get_header();
 										</div>
 										<div class="nv-comment-header">
 											<div class="comment-author">
-												by <?php echo($chosen_comment->comment_author);?>
+												captioned by <?php echo($chosen_comment->comment_author);?>
 											</div>
 											<div class="comments-link">
 												<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">view all captions</a>
