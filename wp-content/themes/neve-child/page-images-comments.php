@@ -67,7 +67,7 @@ get_header();
 							<article class="nv-comment-article on-page">
 								<div class="nv-comment-header">
 									<div class="comments-link">
-										<a href="<?php echo(get_attachment_link($this_child->ID)) ?>">This photo could use a caption</a>
+										No caption for this photo yet. <a href="<?php echo(get_attachment_link($this_child->ID)) ?>">Please write one!</a>
 									</div>
 								</div>
 							</article>
