@@ -62,10 +62,27 @@ function neve_child_enqueue_scripts() {
       echo $args['before_title'] . $title . $args['after_title'];
 
       // This is where you run the code and display the output
-      echo __( 'Hello, World!', 'show_vocab_widget_domain' );
-
       $vocab_file = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
       $vocab_arr = json_decode($vocab_file, true);
+
+      echo('<dl>');
+      foreach($vocab_arr['word'] as $item){
+        echo(
+          '<dt>'.
+          $item['name'].
+          '</dt>'
+        );
+        if(strlen($item['description']) > 0){
+          echo(
+            '<dd>'.
+            $item['description'].
+            '</dd>'
+          );
+        }
+      }
+      echo('</dl>');
+
+      console_log($vocab_arr);
 
       //display other theme things
       echo $args['after_widget'];
