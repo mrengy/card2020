@@ -28,8 +28,6 @@ get_header();
 		        'post_parent'    => $post->ID
 					);
 
-					//echo($post->ID);
-
 					$this_page_children = get_children($children_args);
 
 					/*

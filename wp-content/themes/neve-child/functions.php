@@ -32,6 +32,77 @@ function neve_child_enqueue_scripts() {
   wp_localize_script( 'spellcheck', 'neve_child_stylesheet_directory', $neve_child_stylesheet_directory );
 }
 
+//widget to show vocab list
+function write_vocab(){
+  $vocab = file_get_contents( get_stylesheet_directory_uri().'/js/vocab.json' );
+}
+
+  // Creating the widget
+  class show_vocab extends WP_Widget {
+
+    // The construct part
+    function __construct() {
+      parent::__construct(
+
+      // Base ID of your widget
+      'show_vocab_widget',
+
+      // Widget name will appear in UI
+      __("Myron's Vocabulary", 'show_vocab_widget_domain'),
+
+      // Widget description
+      array( 'description' => __( 'Showing vocab list from json file', 'mike-eng.com' ), )
+      );
+    }
+
+    // Creating widget front-end
+    public function widget( $args, $instance ) {
+      $title = apply_filters( 'widget_title', $instance['title'] );
+
+      // before and after widget arguments are defined by themes
+      echo $args['before_widget'];
+      if ( ! empty( $title ) )
+      echo $args['before_title'] . $title . $args['after_title'];
+
+      // This is where you run the code and display the output
+      echo __( 'Hello, World!', 'show_vocab_widget_domain' );
+      echo $args['after_widget'];
+    }
+
+    // Creating widget Backend
+    public function form( $instance ) {
+      if ( isset( $instance[ 'title' ] ) ) {
+      $title = $instance[ 'title' ];
+      }
+      else {
+      $title = __( 'New title', 'show_vocab_widget_domain' );
+      }
+      // Widget admin form
+      ?>
+      <p>
+        <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
+      </p>
+      <?php
+    }
+
+
+    // Updating widget replacing old instances with new
+    public function update( $new_instance, $old_instance ) {
+      $instance = array();
+      $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+      return $instance;
+    }
+
+    // Class show_vocab ends here
+  }
+
+  function show_vocab_load_widget() {
+    register_widget( 'show_vocab' );
+  }
+
+  add_action( 'widgets_init', 'show_vocab_load_widget' );
+
 //php debugging function
 function console_log($output, $with_script_tags = true) {
     $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
