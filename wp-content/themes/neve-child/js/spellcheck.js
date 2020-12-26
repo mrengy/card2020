@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
       }
       var string_incorrect_words = (incorrect_words.join(', '));
 
-      var error_message ="Sorry. \""+string_incorrect_words+"\" is not in Myron's vocabulary yet.";
+      var error_message ='Sorry. '+string_incorrect_words+' is not in <a href="#secondary">Myron\'s vocabulary</a> yet.';
 
       $('#comment').addClass('has-error');
       $('#comment').after(
