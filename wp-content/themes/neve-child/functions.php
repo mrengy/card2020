@@ -83,7 +83,11 @@ function neve_child_enqueue_scripts() {
       if(is_string($vocab_file)){
         $vocab_arr = json_decode($vocab_file, true);
       } else{
-        $vocab_arr = $vocab_file;
+        $vocab_arr = array();
+        array_push($vocab_arr,'word');
+        foreach ($vocab_file['word'] as $k => $v){
+          $vocab_arr['word'][$k] = clone $v;
+        }
       }
       console_log($vocab_file);
       console_log($vocab_arr);
