@@ -45,7 +45,7 @@ jQuery(document).ready(function($){
       }
       var string_incorrect_words = (incorrect_words.join(', '));
 
-      var error_message ='Sorry. '+string_incorrect_words+' is not in <a href="#secondary">Myron\'s vocabulary</a> yet.';
+      var error_message ='Sorry. '+string_incorrect_words+' is not in <a href="#secondary" class="scrollLink">Myron\'s vocabulary</a> yet.';
 
       $('#comment').addClass('has-error');
       $('#comment').after(
@@ -68,5 +68,9 @@ jQuery(document).ready(function($){
   $('#commentform').submit(throwerrors);
 
   //scroll to anchor
-  $("a[href^=#]").click(function(e) {   e.preventDefault();   var dest = $(this).attr('href');   console.log(dest);   $('html,body').animate({ scrollTop: $(dest).offset().top }, 'slow'); });
+    $( "a.scrollLink" ).click(function( event ) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
+    });
+
 });

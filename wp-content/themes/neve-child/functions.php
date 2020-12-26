@@ -32,7 +32,7 @@ function neve_child_enqueue_styles() {
   //change default verbiage
   function neve_child_comment_form_defaults( $defaults ) {
     $defaults['title_reply'] = __( 'Add a caption' );
-    $defaults['comment_notes_before'] = __('<span id="email-notes">...using only words in <a href="#secondary">Myron\'s vocabulary</a>.</span>' );
+    $defaults['comment_notes_before'] = __('<span id="email-notes">...using only words in <a href="#secondary" class="scrollLink">Myron\'s vocabulary</a>.</span>' );
     $defaults['fields']['email'] = __( '<p class="comment-form-email"><label for="email">Email (will not be published) <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>' );
     return $defaults;
   }
