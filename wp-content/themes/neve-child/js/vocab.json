@@ -343,6 +343,21 @@
       {
         "name": "truck",
         "description": ""
+      },
+
+      {
+        "name": "scoot",
+        "description": ""
+      },
+
+      {
+        "name": "nice",
+        "description": ""
+      },
+
+      {
+        "name": "cohete",
+        "description": "Spanish for rocket"
       }
     ]
 }
