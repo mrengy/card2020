@@ -107,8 +107,8 @@ dd:before{
 dd:after{
   content: "\0029";
 }
-/*
-#nv-primary-navigation-main, .menu-mobile-toggle{
-  display: none;
+
+#comments .form-submit{
+  justify-content: flex-start;
+  display:flex;
 }
-*/

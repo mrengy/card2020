@@ -25,6 +25,7 @@ function neve_child_enqueue_styles() {
   //remove website field
   function remove_comment_fields($fields){
     unset($fields['url']);
+    unset( $fields['cookies']);
     return $fields;
   }
   add_filter('comment_form_default_fields','remove_comment_fields');
