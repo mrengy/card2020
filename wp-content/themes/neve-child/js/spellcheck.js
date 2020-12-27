@@ -74,14 +74,4 @@ jQuery(document).ready(function($){
         $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 500);
     });
 
-    //custom for error message
-    function scrollToAnchor(aid){
-      var aTag = $("a[name='"+ aid +"']");
-      $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-    }
-
-    $('a.scrollLink').click(
-      scrollToAnchor('secondary');
-    );
-
 });
