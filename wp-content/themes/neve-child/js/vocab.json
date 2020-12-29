@@ -363,6 +363,21 @@
       {
         "name": "ice",
         "description": ""
+      },
+
+      {
+        “name”: “hot”,
+        “description”: “”
+      },
+
+      {
+        “name”: “maíz”,
+        “description”: “Spanish for corn”
+      },
+
+      {
+        “name”: “maiz”,
+        “description”: “Spanish for corn without the accented i”
       }
     ]
 }
