@@ -378,6 +378,16 @@
       {
         “name”: “maiz”,
         “description”: “Spanish for corn without the accented i”
+      },
+
+      {
+        “name”: “aquí”,
+        “description”: “Spanish for here”
+      },
+
+      {
+        “name”: “aqui”,
+        “description”: “Spanish for here without the accented i”
       }
     ]
 }
