@@ -366,28 +366,28 @@
       },
 
       {
-        “name”: “hot”,
-        “description”: “”
+        "name": "hot",
+        "description": ""
       },
 
       {
-        “name”: “maíz”,
-        “description”: “Spanish for corn”
+        "name": "maíz",
+        "description": "Spanish for corn"
       },
 
       {
-        “name”: “maiz”,
-        “description”: “Spanish for corn without the accented i”
+        "name": "maiz",
+        "description": "Spanish for corn without the accented i"
       },
 
       {
-        “name”: “aquí”,
-        “description”: “Spanish for here”
+        "name": "aquí",
+        "description": "Spanish for here"
       },
 
       {
-        “name”: “aqui”,
-        “description”: “Spanish for here without the accented i”
+        "name": "aqui",
+        "description": "Spanish for here without the accented i"
       }
     ]
 }
