@@ -3,7 +3,7 @@
   "description": "holiday card for 2020",
 
   "require": {
-    "johnpbloch/wordpress": "5.7.*",
+    "johnpbloch/wordpress": "5.8.*",
     "wpackagist-plugin/akismet": "*",
     "wpackagist-plugin/jetpack": "*"
   },
@@ -21,15 +21,15 @@
         "package" : {
           "name"    : "wordpress",
           "type"    : "webroot",
-          "version" : "5.7.2",
+          "version" : "5.8",
           "dist"    : {
-            "url"  : "https://github.com/WordPress/WordPress/archive/5.7.2.zip",
+            "url"  : "https://github.com/WordPress/WordPress/archive/5.8.zip",
             "type" : "zip"
           },
           "source" : {
             "url"       : "https://github.com/WordPress/WordPress",
             "type"      : "git",
-            "reference" : "5.7.2"
+            "reference" : "5.8"
           },
           "require" : {
             "fancyguy/webroot-installer" : "1.0.0"
