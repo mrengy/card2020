@@ -1,0 +1,88 @@
+/*
+Theme Name: Neve Child
+description: >-
+  Child Theme of Neve
+Author: Mike Eng
+Author URI: http://mike-eng.com
+Template: neve
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, responsive-layout
+Text Domain: neve-child
+*/
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+figure.alignleft:first-child, figure.alignright:first-child {
+  margin-top: 0; }
+
+p {
+  clear: both; }
+
+@media (min-width: 769px) {
+  p {
+    clear: none; } }
+.header-menu-sidebar .nav-menu-primary ul li {
+  text-align: left; }
+
+.error, .error a {
+  color: red; }
+
+.has-error {
+  border: red 1px solid; }
+
+.entry-content p {
+  max-width: 769px; }
+
+.on-page .nv-comment-content {
+  font-size: 1.25em; }
+.on-page .nv-comment-content:before {
+  content: open-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  top: .4em;
+  color: #ccc;
+  font-size: 3em;
+  font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif; }
+.on-page .nv-comment-content:after {
+  content: close-quote;
+  display: inline;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  top: .4em;
+  color: #ccc;
+  font-size: 3em;
+  font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif; }
+.on-page .nv-comment-header, .on-page .nv-comment-header .comment-author {
+  display: block;
+  clear: both; }
+
+dt {
+  display: inline-block;
+  float: left;
+  clear: left;
+  margin-bottom: .5em; }
+
+dd {
+  font-style: italic;
+  opacity: .7;
+  display: inline-block;
+  float: left;
+  clear: none;
+  margin-left: .5em; }
+
+dd:before {
+  content: "\0028"; }
+
+dd:after {
+  content: "\0029"; }
+
+#comments .form-submit {
+  justify-content: flex-start;
+  display: flex; }
+
+/*# sourceMappingURL=style.css.map */
